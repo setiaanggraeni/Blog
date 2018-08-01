@@ -41,10 +41,10 @@
                   <input type="text" v-model="visitorName" style="height:40px;border-radius:5px" placeholder="Your Name...">
                 </div>
                 <div class="col-auto">
-                    <input type="text" v-model="visitorEmail" style="height:40px;border-radius:5px" placeholder="Your Email...">
+                  <input type="text" v-model="visitorEmail" style="height:40px;border-radius:5px" placeholder="Your Lastname...">
                 </div>
                 <div class="col-auto">
-                  <button @click="loginVisitor" class="btn btn-primary">Login</button>
+                  <button @click="loginVisitor" class="btn btn-primary">Login/Register</button>
                 </div>
               </div>
             </form>
@@ -105,7 +105,7 @@ export default {
     },
     postComment () {
       var name = localStorage.getItem('username')
-      firebase.database().ref('contents/' + this.allPost[0].title + '/comment').push({
+      firebase.database().ref('contents/' + this.allPost.title + '/comment').push({
         commentPost: this.theComment,
         userComment: name,
         timeComment: new Date().toString()

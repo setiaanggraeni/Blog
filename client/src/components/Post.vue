@@ -34,7 +34,7 @@ export default {
     }
   },
   mounted () {
-    console.log('masuk home?')
+    // console.log('masuk home?')
     this.getPost()
   },
   firebase () {
